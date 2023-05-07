@@ -1,107 +1,24 @@
 import java.util.Scanner;
-class FlowEx6{
-    public static void main(String[] args){
-        System.out.print("현재 월을 입력하세요.>");
 
+public class Main {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int month = scanner.nextInt();
+        //입력받은 num1값
+        int i = Integer.parseInt(scanner.nextLine());
+        //385
+        String num2 = scanner.nextLine();
 
-        switch (month){
-            case 3: case 4: case 5:
-                System.out.println("현재의 계절은 봄입니다.");
-                break;
+        //385의 첫째자리수
+        int i1 = Integer.parseInt(String.valueOf(num2.charAt(0)));
+        //385의 둘째자릿수
+        int i2 = Integer.parseInt(String.valueOf(num2.charAt(1)));
+        //385의 셋째자릿수
+        int i3 = Integer.parseInt(String.valueOf(num2.charAt(2)));
 
-            case 6: case 7: case 8:
-                System.out.println("현재의 계절은 여름입니다.");
-                break;
-
-            case 9: case 10: case 11:
-                System.out.println("현재의 계절은 가을입니다.");
-                break;
-
-            default:
-            case 12: case 1: case 2:
-                System.out.println("현재의 계절은 겨울입니다.");
-                break;
-        }
+        System.out.println(i*i3);
+        System.out.println(i*i2);
+        System.out.println(i*i1);
+        System.out.println(i*(Integer.parseInt(num2)));
     }
 }
-class DeckTest {
-    public static void main(String args[]) {
-        Deck d = new Deck();
-        Card c = d.pick();
-        System.out.println(c);
-
-        d.shuffle();
-        c = d.pick(0);
-        System.out.println(c);
-    }
-}
-class Deck{
-        final int CARD_NUM =52; //카드의 개수
-        Card cardArr[]= new Card[CARD_NUM]; //Card 객체 배열 포함
-        Deck () {
-            int i =0;
-            for(int k=Card.KIND_MAX; k>0; k--)
-                for(int n=0; n< Card.NUM_MAX; n++)
-                    cardArr[i++]= new Card(k,n+1);
-        }
-        Card pick(int index){
-            return cardArr[index];
-        }
-        Card pick(){
-            int index = (int)(Math.random() * CARD_NUM);
-            return pick(index);
-        }
-        void shuffle(){
-            for(int i=0; i < cardArr.length; i++){
-                int r = (int)(Math.random() * CARD_NUM);
-                Card temp = cardArr[i];
-                cardArr[i] = cardArr[r];
-                cardArr[r] = temp;
-            }
-        }
-    }
-    class Card{
-    static final int KIND_MAX =4;
-    static final int NUM_MAX = 13;
-    static final int SPADE = 4;
-    static final int DIAMOND = 3;
-    static final int HEART = 2;
-    static final int CLOVER = 1;
-    int kind;
-    int number;
-
-    Card(){
-        this(SPADE,1);
-    }
-    Card(int kind, int number){
-            this.kind = kind;
-            this.number = number;
-        }
-
-        @Override
-        public String toString() {
-            String[] kinds = {"","CLOVER","HEART","DIAMOND","SPADE"};
-            String numbers = "0123456789XJQK";
-            return "Kind : "+ kinds[this.kind]
-                    + ", number : " + numbers.charAt(this.number);
-    }
-    }
-
-class SuperTest{
-    public static void main(String args[]){
-        Child c = new Child();
-        c.method();
-    }
-}class Parent{
-    int x =10;
-}
-class Child extends Parent{
-    int x =20;
-    void method(){
-        System.out.println("x="+ x);
-        System.out.println("this.x="+ this.x);
-        System.out.println("super.x="+ super.x);
-    }
-}
+//백준 : 두수비교하기문제, 꼬마 정민문제 :총 2개 문제 풀기
