@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/*import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,5 +20,63 @@ public class Main {
         System.out.println(i*i1);
         System.out.println(i*(Integer.parseInt(num2)));
     }
-}
+}*/
 //백준 : 두수비교하기문제, 꼬마 정민문제 :총 2개 문제 풀기
+
+
+/*public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        long a = scanner.nextLong();
+        long b = scanner.nextLong();
+        long c = scanner.nextLong();
+
+        long sum = a + b + c;
+        System.out.println(sum);
+        scanner.close();
+    }
+}
+/*
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+
+        if (a > b) {
+            System.out.println(">");
+        } else if (a < b) {
+            System.out.println("<");
+        } else if(a==b){
+            System.out.println("==");
+        }
+    }
+}*/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int score = scanner.nextInt();
+        String grade;
+
+        if (score >= 90 && score <= 100) {
+            grade = "A";
+        } else if (score >= 80 && score <= 89) {
+            grade = "B";
+        } else if (score >= 70 && score <= 79) {
+            grade = "C";
+        } else if (score >= 60 && score <= 69) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+
+        System.out.println(grade);
+        scanner.close();
+    }
+}
